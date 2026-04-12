@@ -1,0 +1,290 @@
+/* ===== Глобальные стили ===== */
+:root {
+  --primary: #ff7b00; /* Оранжевый */
+  --primary-dark: #e56d00;
+  --dark: #1a1a1a; /* Тёмный фон */
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  --gradient: linear-gradient(135deg, var(--primary) 0%, #ff9500 100%);
+}
+
+/* Плавные переходы для всех элементов */
+* {
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Кастомный скроллбар */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* ===== Основные стили ===== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ===== Навбар ===== */
+.navbar {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 123, 0, 0.2);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.navbar-brand i {
+  color: var(--primary);
+}
+
+.nav-link {
+  font-weight: 500;
+  margin: 0 10px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ===== Герой секция ===== */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,123,0,0.1) 0%, transparent 70%);
+  animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section h2 {
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* ===== Кнопки ===== */
+.btn {
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 12px 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-warning {
+  background: var(--gradient);
+  border: none;
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.4);
+}
+
+.btn-warning:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 123, 0, 0.6);
+}
+
+.btn-warning::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: width 0.3s;
+  z-index: -1;
+}
+
+.btn-warning:hover::before {
+  width: 100%;
+}
+
+/* ===== Карточки услуг ===== */
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: white;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.icon-box {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin: 0 auto 20px;
+  background: rgba(255, 123, 0, 0.1);
+  color: var(--primary);
+  font-size: 2rem;
+}
+
+/* ===== Портфолио ===== */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-img {
+  transition: transform 0.5s;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.portfolio-item:hover .portfolio-img {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(255,123,0,0.9) 0%, transparent 100%);
+  opacity: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  color: white;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 992px) {
+  .hero-section h1 {
+    font-size: 2.8rem;
+  }
+
+  .navbar-collapse {
+    background: var(--dark);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* ===== Анимации ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* ===== Дополнительные эффекты ===== */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+.input-group input,
+.input-group textarea {
+  border-radius: 50px !important;
+  padding: 15px 20px !important;
+  border: 1px solid #eee !important;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 123, 0, 0.25) !important;
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессиональный строитель | Портфолио</title>
+    <!-- Bootstrap 5 + Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Анимации -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Основные стили -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<!-- Плавный скролл -->
+<div id="preloader"></div>
+
+<!-- Яркий навбар с градиентом -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="fas fa-hammer me-2"></i>СтройМастер
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#home">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">Обо мне</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Услуги</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Портфолио</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Герой-секция с параллакс эффектом -->
+<header id="home" class="hero-section">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-7" data-aos="fade-right">
+                <h1 class="display-3 fw-bold text-white mb-4">Максим Сергеевичь</h1>
+                <h2 class="text-warning mb-4">Профессиональный строитель-универсал</h2>
+                <p class="lead text-white-50 mb-5">3 года опыта в ремонте и отделке жилых и коммерческих помещений</p>
+                <a href="#contacts" class="btn btn-warning btn-lg px-4 me-2">Заказать звонок</a>
+                <a href="#portfolio" class="btn btn-outline-light btn-lg px-4">Мои работы</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Обо мне -->
+<section id="about" class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+                <img src="images/worker.jpg" alt="Строитель" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-lg-7" data-aos="fade-left">
+                <h2 class="fw-bold mb-4"><span class="text-warning">Обо</span> мне</h2>
+                <p class="lead">Профессиональный строитель с большим опытом работы</p>
+                <div class="progress mb-3" style="height: 7px;">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 95%"></div>
+                </div>
+                <p>Меня зовут Максим. Я занимаюсь строительством и ремонтом более 3 лет. Выполняю работы любой сложности "под ключ".</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Качественные материалы</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Соблюдение сроков</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Гарантия на работы</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Чистовая отделка</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Честные цены</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Бесплатный выезд</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Услуги -->
+<section id="services" class="py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold"><span class="text-warning">Мои</span> услуги</h2>
+            <p class="text-muted">Качественное выполнение всех видов строительных работ</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box bg-warning bg-opacity-10 text-warning mb-4">
+                            <i class="fas fa-home fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Ремонт квартир</h5>
+                        <p class="text-muted">Полный цикл от черновой до чистовой отделки</p>
+                        <ul class="list-unstyled text-start">
+                            <li><i class="fas fa-check text-warning me-2"></i>Демонтаж</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Выравнивание стен</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Укладка напольных покрытий</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Ещё 2 блока услуг -->
+        </div>
+    </div>
+</section>
+
+<!-- Портфолио -->
+<section id="portfolio" class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold"><span class="text-warning">Мои</span> работы</h2>
+            <p class="text-muted">Реализованные проекты за последние 3 года</p>
+        </div>
+        <div class="row g-4">
+            <!-- Пример одной работы -->
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="portfolio-item overflow-hidden rounded shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                         class="img-fluid" alt="Ремонт квартиры">
+                    <div class="portfolio-overlay">
+                        <div class="overlay-content">
+                            <h5>Ремонт квартиры</h5>
+                            <p>Сочи, 2023</p>
+                            <a href="#" class="btn btn-sm btn-warning">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ещё 5 работ -->
+        </div>
+    </div>
+</section>
+
+<!-- Отзывы -->
+<section id="reviews" class="py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold"><span class="text-warning">Отзывы</span> клиентов</h2>
+            <p class="text-muted">Что говорят о моей работе</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="owl-carousel owl-theme">
+                    <!-- Отзыв 1 -->
+                    <div class="review-item p-4 bg-white shadow-sm rounded">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg"
+                                 class="rounded-circle me-3" width="60" alt="Клиент">
+                            <div>
+                                <h6 class="mb-0">Ольга Смирнова</h6>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Александр сделал капитальный ремонт в нашей квартире. Все работы выполнены качественно и в срок. Рекомендую!"</p>
+                    </div>
+                    <!-- Ещё 2 отзыва -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<div class="fade-in" data-delay="100">...</div>
+
+<!-- Контакты -->
+<section id="contacts" class="py-5 bg-dark text-white">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                <h2 class="fw-bold mb-4"><span class="text-warning">Свяжитесь</span> со мной</h2>
+                <p class="lead mb-4">Готов обсудить ваш проект</p>
+
+                <div class="contact-info mb-4">
+                    <div class="d-flex mb-3">
+                        <div class="icon-box bg-warning text-white me-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-0">Адрес</h6>
+                            <p>г. ....... .........</p>
+                        </div>
+                    </div>
+                    <!-- Другие контакты -->
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+                <form class="contact-form">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" placeholder="Телефон" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" rows="4" placeholder="Сообщение"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-warning px-4 py-2">
+                                <i class="fas fa-paper-plane me-2"></i>Отправить
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Футер -->
+<footer class="py-4 bg-black text-white-50">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">© 2024 СтройМастер. Все права защищены.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <div class="social-links">
+                    <a href="#" class="text-white me-3"><i class="fab fa-vk"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Скрипты -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/script.js"></script>
+<script>
+    // Инициализация анимаций
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out'
+    });
+
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+<!-- Подключаем перед закрывающим </body> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
