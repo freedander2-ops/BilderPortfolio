@@ -1,239 +1,131 @@
-// ===== Основные настройки =====
 document.addEventListener('DOMContentLoaded', function() {
-  // Инициализация всех функций после загрузки DOM
-  initNavbar();
-  initSmoothScroll();
-  initPortfolioFilter();
-  initTestimonialsCarousel();
-  initContactForm();
-  initScrollAnimations();
-  initPreloader();
-});
-
-// ===== 1. Умный навбар =====
-function initNavbar() {
-  const navbar = document.querySelector('.navbar');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  // Изменение навбара при скролле
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      navbar.classList.add('navbar-scrolled');
-      navbar.style.padding = '10px 0';
-    } else {
-      navbar.classList.remove('navbar-scrolled');
-      navbar.style.padding = '15px 0';
-    }
-  });
-
-  // Подсветка активного раздела
-  window.addEventListener('scroll', highlightActiveSection);
-
-  function highlightActiveSection() {
-    const scrollPos = window.scrollY;
-
-    navLinks.forEach(link => {
-      const section = document.querySelector(link.getAttribute('href'));
-      if (
-        section.offsetTop <= scrollPos + 150 &&
-        section.offsetTop + section.offsetHeight > scrollPos + 150
-      ) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  }
-}
-
-// ===== 2. Плавная прокрутка =====
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 80,
-          behavior: 'smooth'
+    // Инициализация прелоадера
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 500);
         });
-      }
-    });
-  });
-}
-
-// ===== 3. Фильтр портфолио =====
-function initPortfolioFilter() {
-  const filterButtons = document.querySelectorAll('.portfolio-filter button');
-  const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-  if (filterButtons.length > 0) {
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Удаляем активный класс у всех кнопок
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Добавляем активный класс текущей кнопке
-        button.classList.add('active');
-
-        const filterValue = button.getAttribute('data-filter');
-
-        // Фильтрация элементов
-        portfolioItems.forEach(item => {
-          if (filterValue === 'all' || item.classList.contains(filterValue)) {
-            item.style.display = 'block';
-            item.classList.add('animate__animated', 'animate__fadeIn');
-          } else {
-            item.style.display = 'none';
-          }
-        });
-      });
-    });
-  }
-}
-
-// ===== 4. Карусель отзывов =====
-function initTestimonialsCarousel() {
-  const testimonials = document.querySelector('.testimonials-carousel');
-
-  if (testimonials) {
-    let currentIndex = 0;
-    const items = document.querySelectorAll('.testimonial-item');
-    const totalItems = items.length;
-
-    function showTestimonial(index) {
-      items.forEach(item => item.classList.remove('active'));
-      items[index].classList.add('active');
     }
 
-    // Автопрокрутка каждые 5 секунд
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % totalItems;
-      showTestimonial(currentIndex);
-    }, 5000);
-
-    // Ручное управление
-    document.querySelectorAll('.testimonial-control').forEach(control => {
-      control.addEventListener('click', () => {
-        if (control.classList.contains('next')) {
-          currentIndex = (currentIndex + 1) % totalItems;
+    // Изменение навбара при скролле
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
         } else {
-          currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            navbar.classList.remove('navbar-scrolled');
         }
-        showTestimonial(currentIndex);
-      });
     });
-  }
-}
 
-// ===== 5. Форма обратной связи =====
-function initContactForm() {
-  const form = document.querySelector('.contact-form');
+    // Плавная прокрутка для навигации
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
 
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
 
-      const formData = new FormData(form);
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
 
-      // Имитация отправки
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-
-      // Здесь можно добавить реальный AJAX-запрос
-      setTimeout(() => {
-        // Успешная отправка
-        showAlert('success', 'Спасибо! Ваша заявка отправлена.');
-        form.reset();
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-      }, 1500);
+                // Закрыть мобильное меню после клика
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            }
+        });
     });
-  }
 
-  function showAlert(type, message) {
-    const alertDiv = document.createElement('div');
-    alertDiv.className = `alert alert-${type} fixed-top mt-5 mx-auto w-75`;
-    alertDiv.textContent = message;
-    document.body.appendChild(alertDiv);
+    // Обработка формы контактов
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-    setTimeout(() => {
-      alertDiv.classList.add('fade-out');
-      setTimeout(() => alertDiv.remove(), 500);
-    }, 3000);
-  }
-}
+            // Простая валидация
+            const name = contactForm.querySelector('input[name="name"]').value;
+            const phone = contactForm.querySelector('input[name="phone"]').value;
 
-// ===== 6. Анимации при скролле =====
-function initScrollAnimations() {
-  const animateElements = document.querySelectorAll('[data-animate]');
+            if (!name || !phone) {
+                showAlert('danger', 'Пожалуйста, заполните обязательные поля (Имя и Телефон)');
+                return;
+            }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const animation = entry.target.getAttribute('data-animate');
-        entry.target.classList.add('animate__animated', `animate__${animation}`);
-        observer.unobserve(entry.target);
-      }
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            // Имитация отправки
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Отправка...';
+
+            setTimeout(() => {
+                showAlert('success', 'Спасибо, ' + name + '! Ваша заявка успешно отправлена. Я свяжусь с вами в ближайшее время.');
+                contactForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }, 1500);
+        });
+    }
+
+    function showAlert(type, message) {
+        // Удаляем старые алерты если есть
+        const oldAlert = document.querySelector('.alert-floating');
+        if (oldAlert) oldAlert.remove();
+
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type} alert-floating position-fixed top-0 start-50 translate-middle-x mt-5 shadow-lg`;
+        alertDiv.style.zIndex = '9999';
+        alertDiv.style.minWidth = '300px';
+        alertDiv.innerHTML = `
+            <div class="d-flex align-items-center">
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} me-2 fs-4"></i>
+                <div>${message}</div>
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"></button>
+            </div>
+        `;
+        document.body.appendChild(alertDiv);
+
+        // Автоматическое удаление через 5 секунд
+        setTimeout(() => {
+            alertDiv.classList.add('fade');
+            setTimeout(() => {
+                if (alertDiv.parentNode) alertDiv.remove();
+            }, 500);
+        }, 5000);
+    }
+
+    // Подсветка активного пункта меню при скролле
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
     });
-  }, { threshold: 0.1 });
-
-  animateElements.forEach(el => observer.observe(el));
-}
-
-// ===== 7. Прелоадер =====
-function initPreloader() {
-  const preloader = document.getElementById('preloader');
-
-  if (preloader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        preloader.style.opacity = '0';
-        setTimeout(() => preloader.style.display = 'none', 500);
-      }, 500);
-    });
-  }
-}
-
-// ===== 8. Дополнительные утилиты =====
-// Таймер обратного отсчета (акция/спецпредложение)
-function initCountdown() {
-  const countdown = document.getElementById('countdown');
-
-  if (countdown) {
-    const endDate = new Date();
-    endDate.setDate(endDate.getDate() + 3); // +3 дня от текущей даты
-
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = endDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdown.innerHTML = `
-        <div class="countdown-item">
-          <span>${days}</span> дней
-        </div>
-        <div class="countdown-item">
-          <span>${hours}</span> часов
-        </div>
-        <div class="countdown-item">
-          <span>${minutes}</span> минут
-        </div>
-        <div class="countdown-item">
-          <span>${seconds}</span> секунд
-        </div>
-      `;
-
-      if (distance < 0) {
-        clearInterval(timer);
-        countdown.innerHTML = 'Акция завершена!';
-      }
-    }, 1000);
-  }
-}
+});

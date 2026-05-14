@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профессиональный строитель | Портфолио</title>
+    <title>Максим Сергеевич | Профессиональная отделка и ремонт</title>
     <!-- Bootstrap 5 + Font Awesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Анимации -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
     <!-- Основные стили -->
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<!-- Плавный скролл -->
-<div id="preloader"></div>
+<!-- Прелоадер -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
 
-<!-- Яркий навбар с градиентом -->
+<!-- Навбар -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">
-            <i class="fas fa-hammer me-2"></i>СтройМастер
+            <i class="fas fa-hammer text-warning me-2"></i>СтройМастер
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -30,6 +34,7 @@
                 <li class="nav-item"><a class="nav-link active" href="#home">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">Обо мне</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">Услуги</a></li>
+                <li class="nav-item"><a class="nav-link" href="#benefits">Преимущества</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Портфолио</a></li>
                 <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
@@ -38,16 +43,18 @@
     </div>
 </nav>
 
-<!-- Герой-секция с параллакс эффектом -->
+<!-- Герой-секция -->
 <header id="home" class="hero-section">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
-            <div class="col-lg-7" data-aos="fade-right">
-                <h1 class="display-3 fw-bold text-white mb-4">Максим Сергеевичь</h1>
-                <h2 class="text-warning mb-4">Профессиональный строитель-универсал</h2>
-                <p class="lead text-white-50 mb-5">3 года опыта в ремонте и отделке жилых и коммерческих помещений</p>
-                <a href="#contacts" class="btn btn-warning btn-lg px-4 me-2">Заказать звонок</a>
-                <a href="#portfolio" class="btn btn-outline-light btn-lg px-4">Мои работы</a>
+            <div class="col-lg-8" data-aos="fade-right">
+                <h1 class="display-3 fw-bold text-white mb-3">Максим Сергеевич</h1>
+                <h2 class="text-warning mb-4">Профессиональный ремонт и отделка любой сложности</h2>
+                <p class="lead text-white-50 mb-5 fs-4">Превращаю бетонные стены в уютное жилье. Качество, гарантия, соблюдение сроков.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#contacts" class="btn btn-warning btn-lg px-4">Рассчитать стоимость</a>
+                    <a href="#portfolio" class="btn btn-outline-light btn-lg px-4">Смотреть работы</a>
+                </div>
             </div>
         </div>
     </div>
@@ -58,30 +65,44 @@
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
-                <img src="images/worker.jpg" alt="Строитель" class="img-fluid rounded shadow">
-            </div>
-            <div class="col-lg-7" data-aos="fade-left">
-                <h2 class="fw-bold mb-4"><span class="text-warning">Обо</span> мне</h2>
-                <p class="lead">Профессиональный строитель с большим опытом работы</p>
-                <div class="progress mb-3" style="height: 7px;">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 95%"></div>
-                </div>
-                <p>Меня зовут Максим. Я занимаюсь строительством и ремонтом более 3 лет. Выполняю работы любой сложности "под ключ".</p>
-
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Качественные материалы</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Соблюдение сроков</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Гарантия на работы</li>
-                        </ul>
+                <div class="about-img-container">
+                    <img src="https://images.unsplash.com/photo-1589739900243-4b123b3ef301?auto=format&fit=crop&w=600&q=80" alt="Максим Сергеевич" class="img-fluid rounded shadow-lg">
+                    <div class="experience-badge bg-warning text-dark p-3 rounded shadow">
+                        <span class="d-block h2 fw-bold mb-0">3+</span>
+                        <span class="small fw-bold">Года опыта</span>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Чистовая отделка</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Честные цены</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i>Бесплатный выезд</li>
-                        </ul>
+                </div>
+            </div>
+            <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
+                <h2 class="fw-bold mb-4"><span class="text-warning">Обо</span> мне</h2>
+                <p class="lead fw-bold">Мастер-универсал с ответственным подходом</p>
+                <p>Меня зовут Максим. Я занимаюсь профессиональным ремонтом квартир и коммерческих помещений. За 3 года работы я успешно реализовал десятки проектов, заработав репутацию надежного мастера.</p>
+                <p>Мой главный приоритет — качество и долговечность. Я не просто клею обои или кладу плитку, я создаю пространство, в котором вам будет комфортно жить годами.</p>
+
+                <div class="row mt-4 g-3">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-warning me-2 fs-5"></i>
+                            <span>Работаю по договору</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-warning me-2 fs-5"></i>
+                            <span>Фиксированная смета</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-warning me-2 fs-5"></i>
+                            <span>Профессиональный инструмент</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-warning me-2 fs-5"></i>
+                            <span>Помощь в подборе материалов</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,26 +115,153 @@
     <div class="container py-5">
         <div class="text-center mb-5" data-aos="fade-up">
             <h2 class="fw-bold"><span class="text-warning">Мои</span> услуги</h2>
-            <p class="text-muted">Качественное выполнение всех видов строительных работ</p>
+            <p class="text-muted">Полный спектр отделочных работ</p>
         </div>
         <div class="row g-4">
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body text-center p-4">
-                        <div class="icon-box bg-warning bg-opacity-10 text-warning mb-4">
-                            <i class="fas fa-home fa-2x"></i>
+                        <div class="icon-box">
+                            <i class="fas fa-home"></i>
                         </div>
-                        <h5 class="fw-bold">Ремонт квартир</h5>
-                        <p class="text-muted">Полный цикл от черновой до чистовой отделки</p>
-                        <ul class="list-unstyled text-start">
-                            <li><i class="fas fa-check text-warning me-2"></i>Демонтаж</li>
-                            <li><i class="fas fa-check text-warning me-2"></i>Выравнивание стен</li>
-                            <li><i class="fas fa-check text-warning me-2"></i>Укладка напольных покрытий</li>
+                        <h5 class="fw-bold">Ремонт под ключ</h5>
+                        <p class="text-muted small">Комплексный ремонт квартир, домов и офисов от черновой отделки до финишных работ.</p>
+                        <ul class="list-unstyled text-start small">
+                            <li><i class="fas fa-check text-warning me-2"></i>Перепланировка</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Все этапы работ</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Контроль качества</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <!-- Ещё 2 блока услуг -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h5 class="fw-bold">Штукатурные работы</h5>
+                        <p class="text-muted small">Выравнивание стен и потолков по маякам. Машинная и ручная штукатурка.</p>
+                        <ul class="list-unstyled text-start small">
+                            <li><i class="fas fa-check text-warning me-2"></i>Идеальная геометрия</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Подготовка под обои</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Декоративная штукатурка</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box">
+                            <i class="fas fa-th"></i>
+                        </div>
+                        <h5 class="fw-bold">Укладка плитки</h5>
+                        <p class="text-muted small">Профессиональная укладка кафеля, керамогранита и мозаики любой сложности.</p>
+                        <ul class="list-unstyled text-start small">
+                            <li><i class="fas fa-check text-warning me-2"></i>Запил под 45 градусов</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Работа с крупным форматом</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Эпоксидная затирка</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h5 class="fw-bold">Электромонтаж</h5>
+                        <p class="text-muted small">Полная или частичная замена электропроводки, сборка щитов, монтаж освещения.</p>
+                        <ul class="list-unstyled text-start small">
+                            <li><i class="fas fa-check text-warning me-2"></i>Безопасный монтаж</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Штробление без пыли</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Схема разводки</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box">
+                            <i class="fas fa-faucet"></i>
+                        </div>
+                        <h5 class="fw-bold">Сантехника</h5>
+                        <p class="text-muted small">Разводка труб ХВС/ГВС, канализации. Установка чистовой сантехники.</p>
+                        <ul class="list-unstyled text-start small">
+                            <li><i class="fas fa-check text-warning me-2"></i>Современные материалы</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Монтаж инсталляций</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Замена радиаторов</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box">
+                            <i class="fas fa-brush"></i>
+                        </div>
+                        <h5 class="fw-bold">Малярные работы</h5>
+                        <p class="text-muted small">Качественная покраска стен и потолков, поклейка всех видов обоев.</p>
+                        <ul class="list-unstyled text-start small">
+                            <li><i class="fas fa-check text-warning me-2"></i>Безвоздушная покраска</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Стык в стык</li>
+                            <li><i class="fas fa-check text-warning me-2"></i>Стеклохолст и флизелин</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Преимущества -->
+<section id="benefits" class="py-5 bg-dark text-white">
+    <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold text-white">Почему <span class="text-warning">выбирают</span> меня</h2>
+            <p class="text-white-50">Ваше спокойствие — мой приоритет</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                <div class="benefit-card text-center">
+                    <div class="benefit-icon mb-3">
+                        <i class="fas fa-file-contract fa-2x text-warning"></i>
+                    </div>
+                    <h5 class="fw-bold">Договор и гарантия</h5>
+                    <p class="small text-white-50">Работаю официально, несу материальную ответственность.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                <div class="benefit-card text-center">
+                    <div class="benefit-icon mb-3">
+                        <i class="fas fa-clock fa-2x text-warning"></i>
+                    </div>
+                    <h5 class="fw-bold">Соблюдение сроков</h5>
+                    <p class="small text-white-50">Четкий график работ, никаких задержек и простоев.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                <div class="benefit-card text-center">
+                    <div class="benefit-icon mb-3">
+                        <i class="fas fa-calculator fa-2x text-warning"></i>
+                    </div>
+                    <h5 class="fw-bold">Честная цена</h5>
+                    <p class="small text-white-50">Прозрачная смета. Цена не растет в процессе ремонта.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                <div class="benefit-card text-center">
+                    <div class="benefit-icon mb-3">
+                        <i class="fas fa-tools fa-2x text-warning"></i>
+                    </div>
+                    <h5 class="fw-bold">Топ-инструмент</h5>
+                    <p class="small text-white-50">Использую только современное и точное оборудование.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -123,24 +271,81 @@
     <div class="container py-5">
         <div class="text-center mb-5" data-aos="fade-up">
             <h2 class="fw-bold"><span class="text-warning">Мои</span> работы</h2>
-            <p class="text-muted">Реализованные проекты за последние 3 года</p>
+            <p class="text-muted">Реализованные проекты</p>
         </div>
         <div class="row g-4">
-            <!-- Пример одной работы -->
-            <div class="col-md-4" data-aos="fade-up">
-                <div class="portfolio-item overflow-hidden rounded shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                         class="img-fluid" alt="Ремонт квартиры">
+            <div class="col-md-4 col-sm-6" data-aos="fade-up">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
+                         class="portfolio-img" alt="Ремонт ванной">
                     <div class="portfolio-overlay">
-                        <div class="overlay-content">
-                            <h5>Ремонт квартиры</h5>
-                            <p>Сочи, 2023</p>
-                            <a href="#" class="btn btn-sm btn-warning">Подробнее</a>
+                        <div>
+                            <h5 class="fw-bold mb-1">Современная ванная</h5>
+                            <p class="small mb-0">Укладка керамогранита, сантехника</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Ещё 5 работ -->
+            <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&w=600&q=80"
+                         class="portfolio-img" alt="Гостиная под ключ">
+                    <div class="portfolio-overlay">
+                        <div>
+                            <h5 class="fw-bold mb-1">Гостиная под ключ</h5>
+                            <p class="small mb-0">Малярные работы, ламинат, освещение</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=600&q=80"
+                         class="portfolio-img" alt="Кухня-столовая">
+                    <div class="portfolio-overlay">
+                        <div>
+                            <h5 class="fw-bold mb-1">Кухня-столовая</h5>
+                            <p class="small mb-0">Полный цикл отделочных работ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6" data-aos="fade-up">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80"
+                         class="portfolio-img" alt="Студия">
+                    <div class="portfolio-overlay">
+                        <div>
+                            <h5 class="fw-bold mb-1">Квартира-студия</h5>
+                            <p class="small mb-0">Зонирование, декоративная штукатурка</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80"
+                         class="portfolio-img" alt="Спальня">
+                    <div class="portfolio-overlay">
+                        <div>
+                            <h5 class="fw-bold mb-1">Уютная спальня</h5>
+                            <p class="small mb-0">Поклейка обоев, монтаж карнизов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80"
+                         class="portfolio-img" alt="Лофт офис">
+                    <div class="portfolio-overlay">
+                        <div>
+                            <h5 class="fw-bold mb-1">Офис в стиле лофт</h5>
+                            <p class="small mb-0">Кирпичная кладка, покраска</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -150,81 +355,141 @@
     <div class="container py-5">
         <div class="text-center mb-5" data-aos="fade-up">
             <h2 class="fw-bold"><span class="text-warning">Отзывы</span> клиентов</h2>
-            <p class="text-muted">Что говорят о моей работе</p>
+            <p class="text-muted">Мнения тех, кто уже доверил мне свой ремонт</p>
         </div>
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="owl-carousel owl-theme">
-                    <!-- Отзыв 1 -->
-                    <div class="review-item p-4 bg-white shadow-sm rounded">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="https://randomuser.me/api/portraits/women/45.jpg"
-                                 class="rounded-circle me-3" width="60" alt="Клиент">
-                            <div>
-                                <h6 class="mb-0">Ольга Смирнова</h6>
-                                <div class="text-warning">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+            <div class="col-lg-10 mx-auto">
+                <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="review-item p-4 p-md-5 bg-white shadow-sm rounded border-start border-warning border-5">
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="https://randomuser.me/api/portraits/women/45.jpg"
+                                         class="rounded-circle me-3" width="70" alt="Ольга Смирнова">
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Ольга Смирнова</h6>
+                                        <div class="text-warning small">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
                                 </div>
+                                <p class="lead mb-0 italic">"Максим делал у нас капитальный ремонт в новостройке. Очень впечатлил профессионализм и внимание к деталям. Все ровно, аккуратно, мусор за собой всегда убирал. Рекомендую!"</p>
                             </div>
                         </div>
-                        <p class="mb-0">"Александр сделал капитальный ремонт в нашей квартире. Все работы выполнены качественно и в срок. Рекомендую!"</p>
+                        <div class="carousel-item">
+                            <div class="review-item p-4 p-md-5 bg-white shadow-sm rounded border-start border-warning border-5">
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                                         class="rounded-circle me-3" width="70" alt="Игорь Петров">
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Игорь Петров</h6>
+                                        <div class="text-warning small">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="lead mb-0 italic">"Нужно было положить плитку в санузле со сложными углами. Максим справился на отлично. Запил под 45 градусов — просто ювелирная работа. Огромное спасибо за качество."</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="review-item p-4 p-md-5 bg-white shadow-sm rounded border-start border-warning border-5">
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="https://randomuser.me/api/portraits/men/85.jpg"
+                                         class="rounded-circle me-3" width="70" alt="Сергей Волков">
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Сергей Волков</h6>
+                                        <div class="text-warning small">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="lead mb-0 italic">"Заказывал электромонтаж и штукатурку стен. Все выполнено в срок. Смета не изменилась ни на рубль. Мастер знает свое дело, подсказывал как лучше сэкономить на материалах."</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Ещё 2 отзыва -->
+                    <div class="carousel-indicators mt-4 position-relative">
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active bg-warning"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" class="bg-warning"></button>
+                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" class="bg-warning"></button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-<div class="fade-in" data-delay="100">...</div>
-
 <!-- Контакты -->
 <section id="contacts" class="py-5 bg-dark text-white">
     <div class="container py-5">
         <div class="row">
-            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+            <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
                 <h2 class="fw-bold mb-4"><span class="text-warning">Свяжитесь</span> со мной</h2>
-                <p class="lead mb-4">Готов обсудить ваш проект</p>
+                <p class="lead mb-4">Готов обсудить ваш проект и составить предварительную смету.</p>
 
-                <div class="contact-info mb-4">
-                    <div class="d-flex mb-3">
-                        <div class="icon-box bg-warning text-white me-3">
-                            <i class="fas fa-map-marker-alt"></i>
+                <div class="contact-info mt-5">
+                    <div class="d-flex mb-4">
+                        <div class="contact-icon bg-warning text-dark me-3">
+                            <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h6 class="fw-bold mb-0">Адрес</h6>
-                            <p>г. ....... .........</p>
+                            <h6 class="fw-bold mb-0 text-white-50">Телефон</h6>
+                            <a href="tel:+79000000000" class="text-white text-decoration-none h5">+7 (900) 000-00-00</a>
                         </div>
                     </div>
-                    <!-- Другие контакты -->
+                    <div class="d-flex mb-4">
+                        <div class="contact-icon bg-warning text-dark me-3">
+                            <i class="fab fa-telegram-plane"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-0 text-white-50">Telegram</h6>
+                            <a href="https://t.me/your_telegram" target="_blank" class="text-white text-decoration-none h5">@your_telegram</a>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="contact-icon bg-warning text-dark me-3">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-0 text-white-50">Email</h6>
+                            <a href="mailto:info@example.com" class="text-white text-decoration-none h5">info@example.com</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-lg-6" data-aos="fade-left">
-                <form class="contact-form">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Ваше имя" required>
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="contact-form-wrapper bg-white p-4 p-md-5 rounded shadow">
+                    <h4 class="text-dark fw-bold mb-4">Оставить заявку</h4>
+                    <form class="contact-form" id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="name" placeholder="Ваше имя" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" name="phone" placeholder="Ваш телефон" required>
+                            </div>
+                            <div class="col-12">
+                                <select class="form-select" name="service">
+                                    <option selected disabled>Выберите услугу</option>
+                                    <option value="full">Ремонт под ключ</option>
+                                    <option value="plaster">Штукатурные работы</option>
+                                    <option value="tile">Укладка плитки</option>
+                                    <option value="electric">Электромонтаж</option>
+                                    <option value="plumbing">Сантехника</option>
+                                    <option value="paint">Малярные работы</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" name="message" rows="4" placeholder="Кратко опишите задачу"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-warning w-100 py-3">
+                                    <i class="fas fa-paper-plane me-2"></i>Отправить заявку
+                                </button>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <input type="tel" class="form-control" placeholder="Телефон" required>
-                        </div>
-                        <div class="col-12">
-                            <textarea class="form-control" rows="4" placeholder="Сообщение"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-warning px-4 py-2">
-                                <i class="fas fa-paper-plane me-2"></i>Отправить
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -235,44 +500,35 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start">
-                <p class="mb-0">© 2024 СтройМастер. Все права защищены.</p>
+                <p class="mb-0 small">© 2024 Максим Сергеевич. Все права защищены. Ремонт и отделка.</p>
             </div>
             <div class="col-md-6 text-center text-md-end">
                 <div class="social-links">
-                    <a href="#" class="text-white me-3"><i class="fab fa-vk"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-telegram"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/your_telegram" target="_blank" class="text-white-50 me-3"><i class="fab fa-telegram fa-lg"></i></a>
+                    <a href="https://wa.me/79000000000" target="_blank" class="text-white-50 me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    <a href="#" class="text-white-50"><i class="fab fa-vk fa-lg"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
 
+<!-- Плавающая кнопка Telegram -->
+<a href="https://t.me/your_telegram" class="telegram-float" target="_blank">
+    <i class="fab fa-telegram-plane"></i>
+    <span class="float-tooltip">Написать в Telegram</span>
+</a>
+
 <!-- Скрипты -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="js/script.js"></script>
 <script>
-    // Инициализация анимаций
     AOS.init({
         duration: 800,
-        easing: 'ease-in-out'
-    });
-
-    // Плавная прокрутка
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+        easing: 'ease-in-out',
+        once: true
     });
 </script>
-<!-- Подключаем перед закрывающим </body> -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
-<script src="js/script.js"></script>
 </body>
 </html>
