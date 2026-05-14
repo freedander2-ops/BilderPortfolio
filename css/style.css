@@ -2,195 +2,162 @@
 :root {
   --primary: #ff7b00; /* Оранжевый */
   --primary-dark: #e56d00;
-  --dark: #1a1a1a; /* Тёмный фон */
+  --dark: #1a1a1a;
+  --black: #000;
   --light: #f8f9fa;
   --gray: #6c757d;
   --gradient: linear-gradient(135deg, var(--primary) 0%, #ff9500 100%);
 }
 
-/* Плавные переходы для всех элементов */
 * {
   transition: all 0.3s ease-in-out;
   box-sizing: border-box;
 }
 
-/* Кастомный скроллбар */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--dark);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark);
-}
-
-/* ===== Основные стили ===== */
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #fff;
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+}
+
+/* Кастомный скроллбар */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+/* ===== Прелоадер ===== */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--gray);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 /* ===== Навбар ===== */
 .navbar {
-  background: rgba(26, 26, 26, 0.95);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
   padding: 15px 0;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 123, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 123, 0, 0.1);
+}
+
+.navbar-scrolled {
+  background: var(--black);
+  padding: 10px 0;
 }
 
 .navbar-brand {
-  font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: 1px;
-}
-
-.navbar-brand i {
-  color: var(--primary);
 }
 
 .nav-link {
   font-weight: 500;
   margin: 0 10px;
-  position: relative;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: var(--primary);
-  bottom: 0;
-  left: 0;
-  transition: width 0.3s;
-}
-
-.nav-link:hover::after {
-  width: 100%;
+.nav-link:hover, .nav-link.active {
+  color: var(--primary) !important;
 }
 
 /* ===== Герой секция ===== */
 .hero-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,123,0,0.1) 0%, transparent 70%);
-  animation: pulse 15s infinite alternate;
-}
-
-@keyframes pulse {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 .hero-section h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1.1;
 }
 
 .hero-section h2 {
-  font-weight: 300;
-  letter-spacing: 2px;
+  font-size: clamp(1.2rem, 4vw, 2rem);
 }
 
-/* ===== Кнопки ===== */
-.btn {
-  border-radius: 50px;
-  font-weight: 600;
-  padding: 12px 30px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+/* ===== Обо мне ===== */
+.about-img-container {
   position: relative;
-  overflow: hidden;
-  z-index: 1;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
-.btn-warning {
-  background: var(--gradient);
-  border: none;
-  color: white;
-  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.4);
-}
-
-.btn-warning:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 123, 0, 0.6);
-}
-
-.btn-warning::before {
-  content: '';
+.experience-badge {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transition: width 0.3s;
-  z-index: -1;
-}
-
-.btn-warning:hover::before {
-  width: 100%;
+  bottom: 0;
+  right: 0;
+  min-width: 120px;
+  text-align: center;
 }
 
 /* ===== Карточки услуг ===== */
-.card {
-  border: none;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  background: white;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-.card-body {
-  padding: 30px;
-}
-
 .icon-box {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 123, 0, 0.1);
+  color: var(--primary);
+  border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
+  font-size: 1.8rem;
   margin: 0 auto 20px;
-  background: rgba(255, 123, 0, 0.1);
-  color: var(--primary);
-  font-size: 2rem;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ===== Преимущества ===== */
+.benefit-card {
+  padding: 30px 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  height: 100%;
+}
+
+.benefit-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
 }
 
 /* ===== Портфолио ===== */
@@ -198,18 +165,13 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 4/3;
 }
 
 .portfolio-img {
-  transition: transform 0.5s;
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
-}
-
-.portfolio-item:hover .portfolio-img {
-  transform: scale(1.1);
 }
 
 .portfolio-overlay {
@@ -218,73 +180,159 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(255,123,0,0.9) 0%, transparent 100%);
-  opacity: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
   display: flex;
   align-items: flex-end;
-  padding: 30px;
+  padding: 20px;
   color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .portfolio-item:hover .portfolio-overlay {
   opacity: 1;
 }
 
-/* ===== Адаптивность ===== */
-@media (max-width: 992px) {
-  .hero-section h1 {
-    font-size: 2.8rem;
-  }
-
-  .navbar-collapse {
-    background: var(--dark);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-  }
+.portfolio-item:hover .portfolio-img {
+  transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-  .hero-section {
-    text-align: center;
-  }
-
-  .hero-section h1 {
-    font-size: 2.2rem;
-  }
-
-  .btn {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-  }
+/* ===== Отзывы ===== */
+.review-item {
+  border-left: 5px solid var(--primary);
 }
 
-/* ===== Анимации ===== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
 }
 
-.fade-in {
-  animation: fadeIn 1s ease-out forwards;
+/* ===== Контакты ===== */
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
-/* ===== Дополнительные эффекты ===== */
-::selection {
+.contact-form-wrapper {
+  margin-top: -50px;
+  position: relative;
+  z-index: 10;
+}
+
+.form-control, .form-select {
+  padding: 12px 15px;
+  border: 1px solid #dee2e6;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(255, 123, 0, 0.25);
+}
+
+/* ===== Плавающая кнопка Telegram ===== */
+.telegram-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #0088cc;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.telegram-float:hover {
+  transform: scale(1.1);
+  color: white;
+  background: #0077b5;
+}
+
+.float-tooltip {
+  position: absolute;
+  right: 75px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.telegram-float:hover .float-tooltip {
+  opacity: 1;
+}
+
+/* ===== Кнопки ===== */
+.btn {
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-warning {
   background: var(--primary);
+  border-color: var(--primary);
   color: white;
 }
 
-.input-group input,
-.input-group textarea {
-  border-radius: 50px !important;
-  padding: 15px 20px !important;
-  border: 1px solid #eee !important;
+.btn-warning:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: white;
 }
 
-.input-group input:focus,
-.input-group textarea:focus {
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 0 0.25rem rgba(255, 123, 0, 0.25) !important;
+/* ===== Адаптивность ===== */
+@media (max-width: 991px) {
+  .hero-section {
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .hero-section .d-flex {
+    justify-content: center;
+  }
+
+  .contact-form-wrapper {
+    margin-top: 0;
+  }
+
+  .navbar-collapse {
+    background: var(--black);
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-item {
+    aspect-ratio: 1/1;
+  }
+
+  .telegram-float {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
 }
