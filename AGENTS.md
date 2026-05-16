@@ -1,85 +1,85 @@
-# AGENTS
+AGENTS.md
+Purpose
 
-## Orchestrator
-Coordinates all agents.
+This repository contains a portfolio website for a construction finishing specialist (renovation, interior finishing, repair services).
+
+The project goal is:
+
+showcase completed work;
+build trust with clients;
+provide easy communication channels;
+support future scalability;
+remain lightweight and maintainable.
+Core Engineering Principles
+Simplicity over unnecessary abstraction.
+Fast loading is critical.
+Mobile-first UI.
+SEO and local discoverability matter.
+Visual credibility is more important than animations.
+Avoid dependency bloat.
+Keep architecture understandable for solo maintenance.
+Images and portfolio content are primary business assets.
+Agent Rules
+Frontend Agent
 
 Responsibilities:
-- task decomposition
-- validation
-- workflow management
 
----
+responsive layout;
+accessibility;
+image optimization;
+visual consistency;
+component cleanup.
 
-## Backend Agent
-Responsible for:
-- API
-- database
-- infrastructure
-- scalability
+Constraints:
 
-Must:
-- document endpoints
-- validate schema
-- follow security policy
+do not introduce heavy UI frameworks without reason;
+avoid unnecessary runtime JavaScript;
+prioritize static rendering.
+Content Agent
 
----
+Responsibilities:
 
-## Analytics Agent
-Responsible for:
-- market research
-- SEO
-- trend analysis
-- competitor analysis
+portfolio descriptions;
+testimonials;
+service explanations;
+SEO metadata;
+multilingual support.
 
-Must:
-- verify sources
-- store evidence
-- timestamp findings
+Rules:
 
----
+avoid fake reviews;
+avoid exaggerated claims;
+use concise text;
+prioritize trust and clarity.
+Media Agent
 
-## Design Agent
-Responsible for:
-- UI/UX
-- accessibility
-- user flows
-- design systems
+Responsibilities:
 
-Must:
-- provide wireframes
-- maintain consistency
+image compression;
+thumbnail generation;
+EXIF stripping;
+responsive image variants.
 
----
+Security Rules:
 
-## Security Agent
-Responsible for:
-- threat analysis
-- MCP permissions
-- dependency audits
-- sandbox policies
+remove metadata from uploaded images;
+validate file types;
+avoid exposing raw original images publicly.
+Deployment Agent
 
----
+Responsibilities:
 
-Analytics Agent:
-- stores findings in /memory/research/
+CI/CD;
+static hosting;
+cache configuration;
+CDN integration;
+domain configuration.
 
-Architecture Agent:
-- stores decisions in /memory/decisions/
+Rules:
 
-Security Agent:
-- stores audits in /memory/evidence/
+use immutable cache headers for static assets;
+enable gzip/brotli;
+minimize third-party tracking.
+Security Agent
 
----
-
-## Current Agent State (Jules)
-Operates in **Engineering Mode**.
-
-Current focus:
-- Architectural integrity
-- Production-readiness
-- Evolution support
-
-Guidelines:
-- Follow /docs/ARCHITECTURE.md
-- Maintain /scripts/build.sh
-- Ensure bilingual support for all documentation
+Responsibilities:
