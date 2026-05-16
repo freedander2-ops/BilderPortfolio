@@ -68,3 +68,18 @@ Architecture Agent:
 
 Security Agent:
 - stores audits in /memory/evidence/
+
+---
+
+## Current Agent State (Jules)
+Operates in **Engineering Mode**.
+
+Current focus:
+- Architectural integrity
+- Production-readiness
+- Evolution support
+
+Guidelines:
+- Follow /docs/ARCHITECTURE.md
+- Maintain /scripts/build.sh
+- Ensure bilingual support for all documentation
