@@ -1,63 +1,47 @@
-# Портфолио мастера-отделочника
+# BilderPortfolio
 
-Современный и адаптивный сайт-портфолио для профессионального строителя/отделочника.
+Cinematic premium interactive portfolio experience.
 
-## Особенности
-- **Главный экран:** Сильный первый экран с призывом к действию.
-- **Обо мне:** Блок с описанием опыта и ключевых навыков.
-- **Услуги:** Подробный перечень выполняемых работ с иконками.
-- **Преимущества:** Почему клиенты выбирают именно вас.
-- **Портфолио:** Галерея реализованных проектов с описанием.
-- **Отзывы:** Слайдер с отзывами клиентов.
-- **Контакты:** Форма обратной связи и прямые ссылки на мессенджеры.
-- **Telegram:** Плавающая кнопка для быстрой связи и возможность настройки уведомлений.
+## Overview
+This project is a high-end, immersive portfolio for professional masters. It utilizes modern web technologies to create a cinematic user experience with visual depth, smooth transitions, and premium typography.
 
-## Технологии
-- HTML5, CSS3 (Custom properties, Flexbox, Grid)
-- Bootstrap 5 (Сетка и компоненты)
-- Font Awesome 6 (Иконки)
-- AOS (Animate On Scroll)
-- Vanilla JS (Логика и анимации)
+## Tech Stack
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS
+- **Animations:** motion/react
+- **Foundation:** shadcn/ui
+- **Type Safety:** TypeScript
 
-## Запуск проекта
-Просто откройте файл `index.html` в любом современном браузере или используйте локальный сервер (например, VS Code Live Server).
+## Getting Started
 
-## Настройка Telegram
-Для того чтобы форма на сайте отправляла заявки в ваш Telegram:
-1. Создайте бота через [@BotFather](https://t.me/BotFather) и получите токен.
-2. Узнайте свой Chat ID через [@userinfobot](https://t.me/userinfobot).
-3. Создайте файл `.env` на основе `.env.example` и заполните данные (для работы на стороне сервера).
-4. Настройте backend-скрипт (например, на PHP или Node.js) для обработки запросов от формы.
+### Prerequisites
+- Node.js 18.x or later
+- npm or yarn
 
----
+### Installation
+```bash
+npm install
+```
 
-# Professional Finisher Portfolio
+### Development
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-A modern and responsive portfolio website for a professional builder/finisher.
+### Build
+```bash
+npm run build
+```
 
-## Features
-- **Hero Section:** Strong first impression with a call to action.
-- **About Me:** Block describing experience and key skills.
-- **Services:** Detailed list of work performed with icons.
-- **Benefits:** Why customers choose you.
-- **Portfolio:** Gallery of completed projects with descriptions.
-- **Reviews:** Testimonials slider.
-- **Contacts:** Feedback form and direct links to messengers.
-- **Telegram:** Floating button for quick contact and notification settings.
+## Architecture
+The project follows the "Engineering Mode" principles with a clear separation of concerns:
+- `src/app`: Page routes and layouts.
+- `src/components`: Reusable UI elements and large sections.
+- `src/lib`: Core logic, utilities, and motion presets.
+- `src/styles`: Global CSS and design system definitions.
 
-## Technologies
-- HTML5, CSS3 (Custom properties, Flexbox, Grid)
-- Bootstrap 5 (Grid and components)
-- Font Awesome 6 (Icons)
-- AOS (Animate On Scroll)
-- Vanilla JS (Logic and animations)
+For a deeper dive into the architectural decisions, see [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md).
 
-## How to Run
-Simply open the `index.html` file in any modern browser or use a local server (e.g., VS Code Live Server).
-
-## Telegram Setup
-To make the form send requests to your Telegram:
-1. Create a bot via [@BotFather](https://t.me/BotFather) and get the token.
-2. Find your Chat ID via [@userinfobot](https://t.me/userinfobot).
-3. Create a `.env` file based on `.env.example` and fill in the data (for server-side integration).
-4. Set up a backend script (e.g., PHP or Node.js) to handle form requests.
+## Migration
+The project is currently transitioning from a legacy Bootstrap architecture. See the [Migration Strategy](./docs/MIGRATION_STRATEGY.md) for details.

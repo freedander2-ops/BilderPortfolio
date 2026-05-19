@@ -1,49 +1,71 @@
-# Руководство по настройке проекта / Project Customization Guide
+# Руководство по проекту: BilderPortfolio
 
-Данный документ поможет вам адаптировать сайт под свои нужды.
+Это современный, кинематографичный сайт-портфолио для профессионального мастера по отделке и дизайну интерьеров.
 
-## 1. Изменение текстов
-Все тексты находятся в файле `index.html`. Используйте поиск (Ctrl+F), чтобы найти и заменить:
-- `Максим Сергеевич` -> Ваше имя.
-- `+7 (900) 000-00-00` -> Ваш номер телефона.
-- `@your_telegram` -> Ваш ник в Telegram.
+## Технологический стек
+- **Next.js 15**: Современный React фреймворк.
+- **Tailwind CSS**: Для стилизации и адаптивности.
+- **motion/react**: Для продвинутых анимаций и эффектов глубины.
+- **Lucide React**: Для иконок.
 
-## 2. Изменение изображений
-Все изображения находятся в папке `images/` или подключаются по ссылкам (Unsplash).
-- **Главный фон:** Изменяется в `css/style.css` в селекторе `.hero-section`.
-- **Фото в блоке "Обо мне":** В `index.html` в блоке `#about` замените ссылку в теге `<img>` или положите свое фото в `images/` и укажите путь к нему.
-- **Работы в портфолио:** В `index.html` в блоке `#portfolio` замените ссылки в тегах `<img>`.
+## Структура проекта
+- `src/app/`: Основные страницы и макеты.
+- `src/components/sections/`: Отдельные секции сайта (Hero, About и т.д.).
+- `docs/`: Подробная документация (Архитектура, Стратегия миграции).
+- `public/`: Статические ресурсы (изображения, иконки).
 
-## 3. Настройка Telegram-кнопки
-В файле `index.html` найдите все ссылки `https://t.me/your_telegram` и замените `your_telegram` на ваш реальный логин.
+## Как запустить проект
 
-## 4. Настройка формы (Backend)
-На данный момент форма работает в демонстрационном режиме (имитация отправки). Чтобы она реально отправляла данные:
-1. Вам нужен серверный скрипт (например, на PHP).
-2. В `js/script.js` в секции `Обработка формы контактов` замените `setTimeout` на реальный `fetch` запрос к вашему API.
+1.  **Установка зависимостей:**
+    ```bash
+    npm install
+    ```
+2.  **Запуск в режиме разработки:**
+    ```bash
+    npm run dev
+    ```
+3.  **Сборка для продакшена:**
+    ```bash
+    npm run build
+    ```
+
+## Настройка
+- Ссылка на Telegram настраивается в файле `.env` (см. `.env.example`).
+- Основные тексты и изображения находятся в компонентах в `src/components/sections/`.
 
 ---
 
-# Project Customization Guide
+# Project Guide: BilderPortfolio
 
-This document will help you adapt the site to your needs.
+This is a modern, cinematic portfolio website for a professional renovation and interior design specialist.
 
-## 1. Changing Texts
-All texts are located in the `index.html` file. Use search (Ctrl+F) to find and replace:
-- `Максим Сергеевич` -> Your name.
-- `+7 (900) 000-00-00` -> Your phone number.
-- `@your_telegram` -> Your Telegram handle.
+## Tech Stack
+- **Next.js 15**: Modern React framework.
+- **Tailwind CSS**: For styling and responsiveness.
+- **motion/react**: For advanced animations and depth effects.
+- **Lucide React**: For icons.
 
-## 2. Changing Images
-All images are located in the `images/` folder or linked via URLs (Unsplash).
-- **Main Background:** Changed in `css/style.css` in the `.hero-section` selector.
-- **Photo in the "About Me" block:** In `index.html` in the `#about` block, replace the link in the `<img>` tag or place your photo in `images/` and update the path.
-- **Portfolio works:** In `index.html` in the `#portfolio` block, replace the links in the `<img>` tags.
+## Project Structure
+- `src/app/`: Main pages and layouts.
+- `src/components/sections/`: Individual site sections (Hero, About, etc.).
+- `docs/`: Detailed documentation (Architecture, Migration Strategy).
+- `public/`: Static assets (images, icons).
 
-## 3. Telegram Button Setup
-In the `index.html` file, find all `https://t.me/your_telegram` links and replace `your_telegram` with your real username.
+## How to Run
 
-## 4. Form Setup (Backend)
-The form currently works in demo mode (simulated submission). To make it actually send data:
-1. You need a server-side script (e.g., PHP).
-2. In `js/script.js` in the `Contact Form Handling` section, replace `setTimeout` with a real `fetch` request to your API.
+1.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+2.  **Run in development mode:**
+    ```bash
+    npm run dev
+    ```
+3.  **Build for production:**
+    ```bash
+    npm run build
+    ```
+
+## Configuration
+- Telegram link is configured in the `.env` file (see `.env.example`).
+- Main texts and images are located in the components within `src/components/sections/`.
