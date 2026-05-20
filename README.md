@@ -1,63 +1,80 @@
-# Портфолио мастера-отделочника
+# Портфолио Премиальной Отделки | Premium Renovation Portfolio
 
-Современный и адаптивный сайт-портфолио для профессионального строителя/отделочника.
-
-## Особенности
-- **Главный экран:** Сильный первый экран с призывом к действию.
-- **Обо мне:** Блок с описанием опыта и ключевых навыков.
-- **Услуги:** Подробный перечень выполняемых работ с иконками.
-- **Преимущества:** Почему клиенты выбирают именно вас.
-- **Портфолио:** Галерея реализованных проектов с описанием.
-- **Отзывы:** Слайдер с отзывами клиентов.
-- **Контакты:** Форма обратной связи и прямые ссылки на мессенджеры.
-- **Telegram:** Плавающая кнопка для быстрой связи и возможность настройки уведомлений.
-
-## Технологии
-- HTML5, CSS3 (Custom properties, Flexbox, Grid)
-- Bootstrap 5 (Сетка и компоненты)
-- Font Awesome 6 (Иконки)
-- AOS (Animate On Scroll)
-- Vanilla JS (Логика и анимации)
-
-## Запуск проекта
-Просто откройте файл `index.html` в любом современном браузере или используйте локальный сервер (например, VS Code Live Server).
-
-## Настройка Telegram
-Для того чтобы форма на сайте отправляла заявки в ваш Telegram:
-1. Создайте бота через [@BotFather](https://t.me/BotFather) и получите токен.
-2. Узнайте свой Chat ID через [@userinfobot](https://t.me/userinfobot).
-3. Создайте файл `.env` на основе `.env.example` и заполните данные (для работы на стороне сервера).
-4. Настройте backend-скрипт (например, на PHP или Node.js) для обработки запросов от формы.
+Этот проект представляет собой современный, иммерсивный сайт-портфолио для профессионального мастера по отделочным работам. Дизайн выполнен в стиле "Cinematic Premium", подчеркивающем качество и внимание к деталям.
 
 ---
 
-# Professional Finisher Portfolio
+## 🛠 Технологический стек (Tech Stack)
 
-A modern and responsive portfolio website for a professional builder/finisher.
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS (Glassmorphism, Custom Depth)
+- **Animations:** Motion (motion/react) — кинематографические переходы и физика пружин.
+- **Components:** React (Hooks, Context, Refs)
+- **Icons:** Lucide-React
+- **Fonts:** Montserrat & Playfair Display
 
-## Features
-- **Hero Section:** Strong first impression with a call to action.
-- **About Me:** Block describing experience and key skills.
-- **Services:** Detailed list of work performed with icons.
-- **Benefits:** Why customers choose you.
-- **Portfolio:** Gallery of completed projects with descriptions.
-- **Reviews:** Testimonials slider.
-- **Contacts:** Feedback form and direct links to messengers.
-- **Telegram:** Floating button for quick contact and notification settings.
+---
 
-## Technologies
-- HTML5, CSS3 (Custom properties, Flexbox, Grid)
-- Bootstrap 5 (Grid and components)
-- Font Awesome 6 (Icons)
-- AOS (Animate On Scroll)
-- Vanilla JS (Logic and animations)
+## ✨ Основные возможности (Features)
 
-## How to Run
-Simply open the `index.html` file in any modern browser or use a local server (e.g., VS Code Live Server).
+- **Cinematic Hero:** Первый экран с атмосферными градиентами, эффектом глубины и плавным раскрытием текста.
+- **Storytelling Sections:** Разделы "Процесс", "Качество" и "FAQ", раскрывающие философию и стандарты мастера.
+- **Interactive Transformation:** Блок "До/После" с интерактивным слайдером сравнения.
+- **Horizontal Showcase:** Интерактивное портфолио с горизонтальным скроллом и GPU-ускорением.
+- **Immersive Interactivity:** Кастомный курсор с магнитными эффектами и амбиентная анимация фона.
+- **Glassmorphism UI:** Использование эффекта матового стекла для карточек и форм.
+- **Mobile First:** Полная адаптивность и Sticky-кнопки связи для мобильных устройств.
+- **Telegram Integration:** Прямая связь через мессенджер и функциональная форма заявки.
 
-## Telegram Setup
-To make the form send requests to your Telegram:
-1. Create a bot via [@BotFather](https://t.me/BotFather) and get the token.
-2. Find your Chat ID via [@userinfobot](https://t.me/userinfobot).
-3. Create a `.env` file based on `.env.example` and fill in the data (for server-side integration).
-4. Set up a backend script (e.g., PHP or Node.js) to handle form requests.
+---
+
+## 🚀 Быстрый старт (Quick Start)
+
+### 1. Установка зависимостей (Install)
+```bash
+npm install
+```
+
+### 2. Запуск в режиме разработки (Dev)
+```bash
+npm run dev
+```
+
+### 3. Сборка проекта (Build)
+```bash
+npm run build
+```
+
+---
+
+## ⚙️ Настройка (Configuration)
+
+### Telegram и Обратная связь
+Для настройки ссылок и API создайте файл `.env.local` на основе `.env.example`:
+
+```bash
+# Telegram ссылка
+NEXT_PUBLIC_TELEGRAM_LINK=https://t.me/your_username
+
+# Formspree ID (опционально для работы формы без бэкенда)
+NEXT_PUBLIC_FORMSPREE_ID=your_id
+```
+
+### Настройка контента
+- **Тексты:** Все текстовые блоки находятся в `src/components/sections/`.
+- **Цвета и Стили:** Глобальные настройки в `tailwind.config.ts` и `src/app/globals.css`.
+- **Изображения:** Замените URL в компоненте `Portfolio.tsx` и `Hero.tsx` на ваши реальные работы.
+
+---
+
+## 📂 Структура проекта (Project Structure)
+
+- `src/components/sections/` — Основные блоки сайта (Hero, About, Portfolio и др.)
+- `src/components/ui/` — Переиспользуемые анимированные элементы (Magnetic, TextReveal, Cursor).
+- `src/lib/motion/` — Глобальная конфигурация анимаций и пресетов.
+- `docs/` — Подробная техническая документация.
+
+---
+
+## 📄 Лицензия (License)
+MIT

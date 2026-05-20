@@ -1,196 +1,85 @@
-Purpose
+# AGENTS
 
-This repository contains a portfolio website for a construction finishing specialist (renovation, interior finishing, repair services).
-
-The project goal is:
-
-showcase completed work;
-build trust with clients;
-provide easy communication channels;
-support future scalability;
-remain lightweight and maintainable.
-Core Engineering Principles
-Simplicity over unnecessary abstraction.
-Fast loading is critical.
-Mobile-first UI.
-SEO and local discoverability matter.
-Visual credibility is more important than animations.
-Avoid dependency bloat.
-Keep architecture understandable for solo maintenance.
-Images and portfolio content are primary business assets.
-Agent Rules
-Frontend Agent
+## Orchestrator
+Coordinates all agents.
 
 Responsibilities:
+- task decomposition
+- validation
+- workflow management
 
-responsive layout;
-accessibility;
-image optimization;
-visual consistency;
-component cleanup.
+---
 
-Constraints:
+## Backend Agent
+Responsible for:
+- API
+- database
+- infrastructure
+- scalability
 
-do not introduce heavy UI frameworks without reason;
-avoid unnecessary runtime JavaScript;
-prioritize static rendering.
-Content Agent
+Must:
+- document endpoints
+- validate schema
+- follow security policy
 
-Responsibilities:
+---
 
-portfolio descriptions;
-testimonials;
-service explanations;
-SEO metadata;
-multilingual support.
+## Analytics Agent
+Responsible for:
+- market research
+- SEO
+- trend analysis
+- competitor analysis
 
-Rules:
+Must:
+- verify sources
+- store evidence
+- timestamp findings
 
-avoid fake reviews;
-avoid exaggerated claims;
-use concise text;
-prioritize trust and clarity.
-Media Agent
+---
 
-Responsibilities:
+## Design Agent
+Responsible for:
+- UI/UX
+- accessibility
+- user flows
+- design systems
 
-image compression;
-thumbnail generation;
-EXIF stripping;
-responsive image variants.
+Must:
+- provide wireframes
+- maintain consistency
 
-Security Rules:
+---
 
-remove metadata from uploaded images;
-validate file types;
-avoid exposing raw original images publicly.
-Deployment Agent
+## Security Agent
+Responsible for:
+- threat analysis
+- MCP permissions
+- dependency audits
+- sandbox policies
 
-Responsibilities:
+---
 
-CI/CD;
-static hosting;
-cache configuration;
-CDN integration;
-domain configuration.
+Analytics Agent:
+- stores findings in /memory/research/
 
-Rules:
+Architecture Agent:
+- stores decisions in /memory/decisions/
 
-use immutable cache headers for static assets;
-enable gzip/brotli;
-minimize third-party tracking.
-Security Agent
+Security Agent:
+- stores audits in /memory/evidence/
 
-Responsibilities:
+---
 
-dependency review;
-secret scanning;
-CSP headers;
-form protection.
+## Current Agent State (Jules)
+Operates in **Engineering Mode**.
 
-Rules:
+Current focus:
+- Architectural integrity
+- Production-readiness
+- Evolution support
 
-never commit API keys;
-never expose admin panels publicly;
-sanitize all user inputs;
-minimize analytics.
-Recommended Repository Structure
-/
-├── public/
-│   ├── images/
-│   ├── thumbnails/
-│   ├── icons/
-│   └── seo/
-│
-├── src/
-│   ├── components/
-│   ├── sections/
-│   ├── layouts/
-│   ├── pages/
-│   ├── styles/
-│   ├── utils/
-│   └── content/
-│
-├── docs/
-│   ├── ARCHITECTURE.md
-│   ├── ROADMAP.md
-│   ├── SECURITY.md
-│   └── SEO.md
-│
-├── scripts/
-│   ├── optimize-images.js
-│   └── generate-thumbnails.js
-│
-├── AGENTS.md
-├── README.md
-└── package.json
-Development Standards
-Naming
-kebab-case for files;
-PascalCase for React components;
-avoid abbreviations.
-Styling
-
-Preferred:
-
-TailwindCSS or modular SCSS;
-design tokens;
-centralized spacing and typography.
-
-Avoid:
-
-inline styles;
-duplicated CSS;
-random hardcoded values.
-Images
-
-Rules:
-
-convert to WebP/AVIF;
-generate responsive sizes;
-lazy load all gallery images;
-keep hero images compressed.
-Git Workflow
-
-Branches:
-
-main      → production
-staging   → preview/testing
-feature/* → isolated work
-
-Commits:
-
-feat: add before/after gallery
-fix: optimize mobile navbar
-refactor: simplify image loader
-Security Baseline
-Threat Model
-
-Primary risks:
-
-spam form abuse;
-malicious uploads;
-exposed metadata;
-dependency vulnerabilities;
-analytics tracking leakage.
-Minimum Security Controls
-Content Security Policy;
-rate limiting on forms;
-Cloudflare or CDN firewall;
-dependency audit;
-metadata stripping;
-HTTPS only.
-OSINT Risks
-
-Potential leaks:
-
-home addresses in photos;
-EXIF geolocation;
-visible license plates;
-identifiable client information.
-
-Mitigation:
-
-sanitize photos;
-blur sensitive details;
-remove GPS metadata.
+Guidelines:
+- Follow /docs/ARCHITECTURE.md
+- Maintain /scripts/build.sh
+- Ensure bilingual support for all documentation

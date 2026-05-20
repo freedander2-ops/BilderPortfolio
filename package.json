@@ -1,0 +1,50 @@
+{
+  "name": "bilder-portfolio",
+  "version": "1.0.0",
+  "description": "Современный и адаптивный сайт-портфолио для профессионального строителя/отделочника.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freedander2-ops/BilderPortfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/freedander2-ops/BilderPortfolio/issues"
+  },
+  "homepage": "https://github.com/freedander2-ops/BilderPortfolio#readme",
+  "dependencies": {
+    "@playwright/test": "^1.60.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.454.0",
+    "motion": "^12.39.0",
+    "next": "^15.0.0",
+    "playwright": "^1.60.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.5.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^15.0.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^6.0.3"
+  }
+}
