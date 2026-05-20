@@ -1,42 +1,44 @@
 # Архитектура проекта / Project Architecture
 
 ## Философия / Philosophy
-Данный проект спроектирован как легкое, производительное и масштабируемое решение для сайта-портфолио. Основной упор сделан на минимизацию зависимостей и простоту обслуживания.
+BilderPortfolio спроектирован как высокопроизводительный, кинематографический интерфейс. Основной акцент сделан на визуальном погружении (immersion), премиальной типографике и плавности взаимодействий.
 
 ## Технологический стек / Tech Stack
-- **HTML5/CSS3:** Семантическая верстка и современные CSS возможности (Variables, Flexbox, Grid).
-- **Bootstrap 5:** Использование сетки и базовых компонентов для ускорения разработки и обеспечения надежной адаптивности.
-- **Vanilla JavaScript:** Логика реализована на чистом JS без тяжелых фреймворков.
-- **AOS (Animate On Scroll):** Единственная внешняя библиотека для визуальных эффектов, обеспечивающая "живой" интерфейс.
+- **Next.js 15 (App Router):** Обеспечивает серверный рендеринг, оптимизацию изображений и современную маршрутизацию.
+- **Tailwind CSS:** Позволяет гибко управлять дизайн-системой и обеспечивать чистоту стилей.
+- **motion/react:** Инструмент для создания сложных анимаций, многослойной глубины и плавных переходов.
+- **shadcn/ui:** Базовая библиотека доступных компонентов, кастомизированная под премиальный стиль.
+- **TypeScript:** Гарантирует типобезопасность и масштабируемость кода.
+
+## Ключевые решения / Key Decisions
+1. **Cinematic Motion System:** Анимации строятся на принципах физического движения (springs), избегая резких и хаотичных переходов.
+2. **Visual Depth:** Активное использование параллакса, атмосферных градиентов и наложения слоев для создания ощущения глубины.
+3. **Typography First:** Дизайн строится вокруг сильной сетки и контрастной типографики (Montserrat + Playfair Display).
+4. **Performance Optimization:** Использование GPU-ускоренных трансформаций (transform) и оптимизация отрисовки для мобильных устройств.
 
 ## Структура репозитория / Repository Structure
-- `/src`: Исходный код (Source of Truth).
-- `/public`: Статические ресурсы (изображения, иконки).
-- `/scripts`: Скрипты для сборки и автоматизации.
-- `/docs`: Расширенная документация.
-- Корень (`/`): Содержит артефакты сборки для деплоя на хостинги (GitHub Pages и др.).
-
-## Решения / Key Decisions
-1. **Отсутствие сборщиков (Webpack/Vite):** Для проекта такого масштаба внесение сложных инструментов сборки избыточно. Используется простой bash-скрипт.
-2. **CDN для библиотек:** Bootstrap и Font Awesome подключаются через CDN для уменьшения размера репозитория и использования кэша браузера пользователя.
-3. **Lazy Loading:** Изображения в портфолио используют нативную ленивую загрузку браузера.
+- `src/app`: Маршруты и макеты.
+- `src/components/sections`: Крупные блоки страниц (Hero, About и т.д.).
+- `src/components/ui`: Атомарные компоненты.
+- `src/lib/motion`: Пресеты и варианты анимаций.
+- `src/styles`: Глобальные стили и переменные темы.
 
 ---
 
 # English Version
 
 ## Philosophy
-This project is designed as a lightweight, performant, and scalable portfolio website solution. The main focus is on minimizing dependencies and ease of maintenance.
+BilderPortfolio is designed as a high-performance, cinematic interface. The primary focus is on visual immersion, premium typography, and fluid interactions.
 
 ## Tech Stack
-- **HTML5/CSS3:** Semantic markup and modern CSS features.
-- **Bootstrap 5:** Grid and core components for rapid, responsive development.
-- **Vanilla JavaScript:** Clean logic without heavy frameworks.
-- **AOS (Animate On Scroll):** Lightweight library for visual engagement.
+- **Next.js 15 (App Router):** Server-side rendering, image optimization, and modern routing.
+- **Tailwind CSS:** Utility-first styling with a strict design system.
+- **motion/react:** Cinematic animations, layered depth, and smooth transitions.
+- **shadcn/ui:** Accessible component foundation customized for premium aesthetics.
+- **TypeScript:** Type safety and scalability.
 
-## Repository Structure
-- `/src`: Source of truth.
-- `/public`: Static assets.
-- `/scripts`: Automation and build scripts.
-- `/docs`: Extended documentation.
-- Root (`/`): Contains build artifacts for deployment.
+## Key Decisions
+1. **Cinematic Motion System:** Physics-based animations (springs) for fluid movement.
+2. **Visual Depth:** Parallax effects, atmospheric gradients, and layering for immersion.
+3. **Typography First:** Design centered around strong grids and contrasting fonts.
+4. **Performance Optimization:** GPU-accelerated transforms and mobile optimization.
