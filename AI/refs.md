@@ -1,7 +1,9 @@
-# REFERENCES
-
+https://iconsax.io
+https://designspells.com
+https://it-tools.tech
+https://www.skills.sh
+https://21st.dev/home
+https://motion.dev
 https://aircord.co.jp
 https://www.agencefoudre.com
 https://www.nickzoutendijk.nl
-https://motion.dev
-https://21st.dev/home
