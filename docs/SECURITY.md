@@ -30,3 +30,9 @@ Even for a static site, we adhere to fundamental security rules:
 The frontend form is an interface. For production, it is recommended to use:
 - A backend layer with spam protection (e.g., reCAPTCHA).
 - Server-side environment variables for sensitive tokens.
+
+
+## Form Handling
+The frontend form is an interface. For production, it is recommended to use:
+- A backend layer with spam protection (e.g., reCAPTCHA).
+- Server-side environment variables for sensitive tokens.
