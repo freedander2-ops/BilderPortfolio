@@ -42,11 +42,11 @@ export default function Portfolio() {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-65%']);
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-75%']);
   const backgroundBlur = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 10, 10, 0]);
 
   return (
-    <section ref={targetRef} className="relative h-[450vh] bg-black" id="portfolio">
+    <section ref={targetRef} className="relative h-[600vh] bg-black" id="portfolio">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
 
         {/* Background Atmosphere Transition */}
@@ -79,15 +79,15 @@ export default function Portfolio() {
         </div>
 
         {/* Horizontal Scrolling Gallery */}
-        <motion.div style={{ x }} className="flex gap-16 md:gap-32 px-20 md:px-48 will-change-transform">
+        <motion.div style={{ x }} className="flex gap-20 md:gap-40 px-24 md:px-64 items-center will-change-transform">
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              initial={{ clipPath: 'inset(10% 20% 10% 20% round 48px)', opacity: 0 }}
-              whileInView={{ clipPath: 'inset(0% 0% 0% 0% round 48px)', opacity: 1 }}
+              initial={{ clipPath: 'inset(15% 30% 15% 30% round 64px)', opacity: 0 }}
+              whileInView={{ clipPath: 'inset(0% 0% 0% 0% round 64px)', opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-              className={`group relative h-[68vh] w-[85vw] md:w-[65vw] flex-shrink-0 overflow-hidden rounded-[48px] ${GLASS_STYLES.premium} border-white/5 transition-all duration-1000 will-change-transform transform-gpu`}
+              transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
+              className={`group relative h-[75vh] w-[90vw] md:w-[80vw] flex-shrink-0 overflow-hidden rounded-[64px] ${GLASS_STYLES.premium} border-white/5 transition-all duration-1000 will-change-transform transform-gpu`}
             >
               {/* Image Layer with Zoom & Filter */}
               <div className="absolute inset-0 overflow-hidden">

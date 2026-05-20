@@ -99,7 +99,7 @@ export default function About() {
                 С 2008 года я занимаюсь высококачественной отделкой интерьеров. Моя специализация — сложные технические решения и безупречный визуальный результат.
               </p>
 
-              <div className="grid grid-cols-3 gap-16 mb-20">
+              <div className="grid grid-cols-3 gap-16 mb-16">
                 {stats.map((stat, i) => (
                   <motion.div key={i} variants={FADE_UP}>
                     <div className="text-5xl font-heading font-light text-white mb-4 tracking-tighter">{stat.value}</div>
@@ -107,6 +107,13 @@ export default function About() {
                   </motion.div>
                 ))}
               </div>
+
+              <motion.div variants={FADE_UP} className="mb-20 p-10 rounded-[32px] bg-white/[0.02] border border-white/5">
+                <h4 className="text-white font-heading text-xl mb-4 italic">Философия работы</h4>
+                <p className="text-zinc-500 font-light leading-relaxed">
+                  Я верю, что ремонт — это не просто стройка, а создание личного пространства, где каждая деталь должна служить комфорту. Мой подход основан на честности, инженерной точности и уважении к времени заказчика.
+                </p>
+              </motion.div>
 
               <motion.div variants={FADE_UP}>
                 <a

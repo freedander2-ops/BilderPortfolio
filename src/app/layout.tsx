@@ -2,6 +2,9 @@ import './globals.css';
 import { Montserrat, Playfair_Display } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import CustomCursor from '@/components/ui/CustomCursor';
+import AmbientAtmosphere from '@/components/ui/AmbientAtmosphere';
+import Footer from '@/components/layout/Footer';
+import StickyMobileActions from '@/components/ui/StickyMobileActions';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
@@ -29,14 +32,12 @@ export default function RootLayout({
   return (
     <html lang="ru" className="scroll-smooth">
       <body className={`${montserrat.variable} ${playfair.variable} font-sans bg-[#050505] text-white selection:bg-orange-500/30`}>
+        <AmbientAtmosphere />
         <CustomCursor />
+        <StickyMobileActions />
         <Header />
         <main>{children}</main>
-        <footer className="py-12 border-t border-white/5 bg-[#050505] text-center">
-          <p className="text-zinc-600 text-[10px] uppercase tracking-[0.4em] font-medium">
-            © {new Date().getFullYear()} MAKKSIM SERGEEVICH • PREMIER CRAFTSMANSHIP
-          </p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
