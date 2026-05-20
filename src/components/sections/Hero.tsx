@@ -2,113 +2,192 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import { FADE_UP } from "@/lib/motion/variants";
+import { CINEMATIC_TRANSITION } from "@/lib/motion/index";
+import Magnetic from "../ui/Magnetic";
+import TextReveal from "../ui/TextReveal";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
-  // Parallax effects
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -100]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const scale = useTransform(scrollY, [0, 500], [1, 1.1]);
+  const y1 = useTransform(scrollY, [0, 800], [0, 400]);
+  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const scale = useTransform(scrollY, [0, 1000], [1, 1.2]);
+  const blur = useTransform(scrollY, [0, 500], [0, 10]);
 
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black"
+      className="relative h-screen min-h-[800px] w-full flex items-center justify-center overflow-hidden bg-[#020202]"
     >
-      {/* Background Layer with Parallax */}
+      {/* Cinematic Background Layer */}
       <motion.div
-        style={{ y: y1, scale }}
-        className="absolute inset-0 z-0"
+        style={{ y: y1, scale, filter: `blur(${blur}px)` }}
+        className="absolute inset-0 z-0 will-change-transform"
       >
-        <div className="absolute inset-0 bg-cinematic-gradient from-premium-muted/50 via-black to-black z-10" />
+        {/* Deep Atmospheric Gradients */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,#1e1e3a,transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_100%,#121212,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,#080808,transparent_50%)]" />
+
+        {/* Dynamic Light Sources */}
+        <motion.div
+          animate={{
+            opacity: [0.15, 0.35, 0.15],
+            scale: [1, 1.15, 1],
+            x: [0, 20, 0],
+            y: [0, -10, 0]
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 left-1/4 w-[50vw] h-[50vw] bg-indigo-500/10 blur-[180px] rounded-full will-change-transform transform-gpu"
+        />
+        <motion.div
+          animate={{
+            opacity: [0.08, 0.2, 0.08],
+            scale: [1.2, 1, 1.2],
+            x: [0, -30, 0],
+            y: [0, 20, 0]
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-1/4 right-1/4 w-[40vw] h-[40vw] bg-orange-600/5 blur-[150px] rounded-full will-change-transform transform-gpu"
+        />
+
+        {/* Textured Overlay for Surface Feel */}
         <div
-          className="absolute inset-0 opacity-30 grayscale contrast-125"
+          className="absolute inset-0 opacity-40 grayscale mix-blend-soft-light"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
       </motion.div>
 
-      {/* Atmospheric Gradients */}
+      {/* Finely Detailed Carbon Overlay */}
+      <div className="absolute inset-0 z-[1] opacity-[0.05] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+
+      {/* Floating Micro-Particles (Simulating Dust in Light) */}
       <div className="absolute inset-0 z-10 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent opacity-80" />
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent opacity-80" />
-        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-premium-gold/5 blur-[120px] rounded-full" />
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: [0, 0.2, 0],
+              y: [-100, 100],
+              x: [-50, 50]
+            }}
+            transition={{
+              duration: 8 + i * 2,
+              repeat: Infinity,
+              ease: "linear",
+              delay: i * 1.5
+            }}
+            className="absolute bg-white/40 blur-[2px] rounded-full"
+            style={{
+              width: `${2 + i}px`,
+              height: `${2 + i}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
       </div>
 
       {/* Content Layer */}
       <motion.div
-        style={{ y: y2, opacity }}
-        className="relative z-20 text-center px-4 max-w-5xl"
+        style={{ opacity }}
+        className="relative z-30 text-center px-6 max-w-7xl will-change-transform"
       >
         <motion.div
-          variants={FADE_UP}
-          initial="initial"
-          animate="animate"
-          className="mb-6 inline-block"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ ...CINEMATIC_TRANSITION, delay: 0.1 }}
+          className="mb-14 inline-flex items-center gap-4 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl"
         >
-          <span className="text-xs uppercase tracking-[0.5em] text-premium-gold font-medium">
-            Professional Renovation & Design
+          <div className="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(249,115,22,0.8)] animate-pulse" />
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.6em] text-zinc-300 font-medium">
+            ART OF RENOVATION • EST 2012
           </span>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-heading mb-8 leading-none tracking-tight text-gradient"
-        >
-          MAKSIM <br />
-          <span className="italic font-light">SERGEEVICH</span>
-        </motion.h1>
+        <div className="relative mb-20">
+          <motion.h1
+            initial={{ opacity: 0, scale: 1.1, filter: 'blur(20px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+            className="text-7xl md:text-[120px] lg:text-[160px] font-heading font-light leading-[0.8] tracking-tighter"
+          >
+            <span className="block text-white mb-4 drop-shadow-[0_20px_50px_rgba(255,255,255,0.1)]">MAKSIM</span>
+            <span className="block italic text-transparent bg-clip-text bg-gradient-to-b from-zinc-100 via-zinc-400 to-zinc-700/20">
+              SERGEEVICH
+            </span>
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="text-lg md:text-xl text-white/40 font-light max-w-2xl mx-auto mb-12 leading-relaxed tracking-wide"
-        >
-          Crafting immersive living spaces where cinematic aesthetic meets
-          uncompromising technical precision.
-        </motion.p>
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: "100%", opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 2, ease: [0.19, 1, 0.22, 1], delay: 0.8 }}
+            className="h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent mt-12 mx-auto max-w-3xl"
+          />
+        </div>
+
+        <TextReveal
+          text="Создание исключительных интерьеров, где технологическое совершенство встречается с искусством."
+          className="text-lg md:text-2xl text-zinc-400 font-light max-w-4xl mx-auto mb-24 leading-relaxed tracking-wide"
+        />
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-6"
+          transition={{ ...CINEMATIC_TRANSITION, delay: 1.4 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-12"
         >
-          <a
-            href="#portfolio"
-            className="group relative px-12 py-4 overflow-hidden rounded-full bg-white text-black font-semibold transition-all hover:scale-105 active:scale-95"
-          >
-            <span className="relative z-10">EXPLORE WORK</span>
-            <div className="absolute inset-0 bg-premium-gold translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
-          </a>
-          <a
-            href="#contact"
-            className="px-12 py-4 rounded-full border border-white/10 glass hover:bg-white/5 transition-colors tracking-widest text-xs font-bold"
-          >
-            GET IN TOUCH
-          </a>
+          <Magnetic>
+            <a
+              href="#portfolio"
+              className="group relative px-14 py-7 overflow-hidden rounded-full bg-white text-black font-bold transition-all hover:shadow-[0_0_60px_rgba(255,255,255,0.3)] transform-gpu active:scale-95"
+            >
+              <span className="relative z-10 tracking-[0.25em] text-[10px] md:text-xs">СМОТРЕТЬ РАБОТЫ</span>
+              <motion.div
+                className="absolute inset-0 bg-zinc-100"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: 0 }}
+                transition={CINEMATIC_TRANSITION}
+              />
+            </a>
+          </Magnetic>
+
+          <Magnetic>
+            <a
+              href="#contact"
+              className="group relative px-14 py-7 rounded-full border border-white/20 hover:border-white/60 transition-all backdrop-blur-sm transform-gpu active:scale-95"
+            >
+              <span className="relative z-10 tracking-[0.25em] text-[10px] md:text-xs font-bold text-white">ОБСУДИТЬ ПРОЕКТ</span>
+              <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-full" />
+            </a>
+          </Magnetic>
         </motion.div>
       </motion.div>
 
-      {/* Scroll Indicator */}
+      {/* Refined Scroll Hint */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4"
+        transition={{ delay: 2.5, duration: 1.5 }}
+        className="absolute bottom-12 left-12 z-30 flex items-center gap-8"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-white/20">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-premium-gold/50 to-transparent" />
+        <div className="relative w-px h-32 bg-white/5 overflow-hidden">
+          <motion.div
+            animate={{ y: [-128, 128] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-white/40 to-transparent"
+          />
+        </div>
+        <span className="text-[9px] uppercase tracking-[0.5em] text-white/30 font-medium rotate-90 origin-left ml-2 select-none">
+          EXPLORE EXPERIENCE
+        </span>
       </motion.div>
     </section>
   );

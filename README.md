@@ -1,47 +1,78 @@
-# BilderPortfolio
+# Портфолио Премиальной Отделки | Premium Renovation Portfolio
 
-Cinematic premium interactive portfolio experience.
+Этот проект представляет собой современный, иммерсивный сайт-портфолио для профессионального мастера по отделочным работам. Дизайн выполнен в стиле "Cinematic Premium", подчеркивающем качество и внимание к деталям.
 
-## Overview
-This project is a high-end, immersive portfolio for professional masters. It utilizes modern web technologies to create a cinematic user experience with visual depth, smooth transitions, and premium typography.
+---
 
-## Tech Stack
+## 🛠 Технологический стек (Tech Stack)
+
 - **Framework:** Next.js 15 (App Router)
-- **Styling:** Tailwind CSS
-- **Animations:** motion/react
-- **Foundation:** shadcn/ui
-- **Type Safety:** TypeScript
+- **Styling:** Tailwind CSS (Glassmorphism, Custom Depth)
+- **Animations:** Motion (motion/react) — кинематографические переходы и физика пружин.
+- **Components:** React (Hooks, Context, Refs)
+- **Icons:** Lucide-React
+- **Fonts:** Montserrat & Playfair Display
 
-## Getting Started
+---
 
-### Prerequisites
-- Node.js 18.x or later
-- npm or yarn
+## ✨ Основные возможности (Features)
 
-### Installation
+- **Cinematic Hero:** Первый экран с атмосферными градиентами, эффектом глубины и плавным раскрытием текста.
+- **Horizontal Showcase:** Интерактивное портфолио с горизонтальным скроллом и GPU-ускорением.
+- **Immersive Interactivity:** Кастомный курсор с магнитными эффектами для кнопок.
+- **Glassmorphism UI:** Использование эффекта матового стекла для карточек и форм.
+- **Mobile First:** Полная адаптивность и оптимизация производительности для мобильных устройств.
+- **Telegram Integration:** Прямая связь через мессенджер и функциональная форма заявки.
+
+---
+
+## 🚀 Быстрый старт (Quick Start)
+
+### 1. Установка зависимостей (Install)
 ```bash
 npm install
 ```
 
-### Development
+### 2. Запуск в режиме разработки (Dev)
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Build
+### 3. Сборка проекта (Build)
 ```bash
 npm run build
 ```
 
-## Architecture
-The project follows the "Engineering Mode" principles with a clear separation of concerns:
-- `src/app`: Page routes and layouts.
-- `src/components`: Reusable UI elements and large sections.
-- `src/lib`: Core logic, utilities, and motion presets.
-- `src/styles`: Global CSS and design system definitions.
+---
 
-For a deeper dive into the architectural decisions, see [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md).
+## ⚙️ Настройка (Configuration)
 
-## Migration
-The project is currently transitioning from a legacy Bootstrap architecture. See the [Migration Strategy](./docs/MIGRATION_STRATEGY.md) for details.
+### Telegram и Обратная связь
+Для настройки ссылок и API создайте файл `.env.local` на основе `.env.example`:
+
+```bash
+# Telegram ссылка
+NEXT_PUBLIC_TELEGRAM_LINK=https://t.me/your_username
+
+# Formspree ID (опционально для работы формы без бэкенда)
+NEXT_PUBLIC_FORMSPREE_ID=your_id
+```
+
+### Настройка контента
+- **Тексты:** Все текстовые блоки находятся в `src/components/sections/`.
+- **Цвета и Стили:** Глобальные настройки в `tailwind.config.ts` и `src/app/globals.css`.
+- **Изображения:** Замените URL в компоненте `Portfolio.tsx` и `Hero.tsx` на ваши реальные работы.
+
+---
+
+## 📂 Структура проекта (Project Structure)
+
+- `src/components/sections/` — Основные блоки сайта (Hero, About, Portfolio и др.)
+- `src/components/ui/` — Переиспользуемые анимированные элементы (Magnetic, TextReveal, Cursor).
+- `src/lib/motion/` — Глобальная конфигурация анимаций и пресетов.
+- `docs/` — Подробная техническая документация.
+
+---
+
+## 📄 Лицензия (License)
+MIT

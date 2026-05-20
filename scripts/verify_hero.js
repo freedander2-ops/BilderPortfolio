@@ -1,4 +1,10 @@
-const { chromium } = require('playwright');
+import { chromium } from 'playwright';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 (async () => {
   const browser = await chromium.launch();
@@ -7,12 +13,7 @@ const { chromium } = require('playwright');
   // Set viewport to a common desktop resolution
   await page.setViewportSize({ width: 1920, height: 1080 });
 
-  // In a real environment we would start the dev server and navigate to it.
-  // For this verification, we will check if the file compiles and has correct imports.
   console.log('Verifying Hero component structure...');
-
-  const fs = require('fs');
-  const path = require('path');
 
   const heroPath = path.join(__dirname, '../src/components/sections/Hero.tsx');
   if (fs.existsSync(heroPath)) {
