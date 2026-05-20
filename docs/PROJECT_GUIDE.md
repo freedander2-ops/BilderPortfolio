@@ -25,10 +25,20 @@
 3. В переменной `NEXT_PUBLIC_TELEGRAM_LINK` укажите ссылку на ваш профиль в формате `https://t.me/логин`.
 4. В компоненте `src/components/sections/Contacts.tsx` ссылка подхватится автоматически.
 
+### Как добавлять проекты (Content System)
+Все проекты находятся в файле `src/data/projects.ts`. Чтобы добавить новый проект:
+1. Подготовьте ссылки на изображения (Unsplash или локальные).
+2. Добавьте новый объект в массив `projects`.
+3. Выберите один из типов раскладки (`layoutType`):
+   - `curtain` (эффект занавеса),
+   - `floating` (парящая глубина),
+   - `stacked` (художественный коллаж).
+4. Заполните описание и "историю проекта" для максимального погружения клиента.
+
 ### Где заполнять свои данные
 - **Имя и заголовок**: `src/components/sections/Hero.tsx`
 - **Описание услуг**: `src/components/sections/Services.tsx`
-- **Проекты в портфолио**: Массив `projects` в `src/components/sections/Portfolio.tsx`
+- **Проекты и портфолио**: `src/data/projects.ts`
 - **Тексты отзывов**: `src/components/sections/Reviews.tsx`
 - **Контактные данные (телефон, email)**: `src/components/sections/Contacts.tsx`
 
@@ -56,9 +66,19 @@ The site utilizes a "Motion Logic" system where every element animates relative 
 3. Set `NEXT_PUBLIC_TELEGRAM_LINK` to your profile link (e.g., `https://t.me/username`).
 4. The link will be automatically applied in `src/components/sections/Contacts.tsx`.
 
+### Adding Projects (Content System)
+All projects are stored in `src/data/projects.ts`. To add a new one:
+1. Prepare image URLs.
+2. Add a new object to the `projects` array.
+3. Choose a `layoutType`:
+   - `curtain` (vertical reveal),
+   - `floating` (parallax depth),
+   - `stacked` (artistic collage).
+4. Fill in the description and "full story" for immersive storytelling.
+
 ### Customizing Your Data
 - **Name & Title**: `src/components/sections/Hero.tsx`
 - **Service Descriptions**: `src/components/sections/Services.tsx`
-- **Portfolio Projects**: The `projects` array in `src/components/sections/Portfolio.tsx`
+- **Portfolio Projects**: `src/data/projects.ts`
 - **Reviews**: `src/components/sections/Reviews.tsx`
 - **Contact Details (Phone, Email)**: `src/components/sections/Contacts.tsx`
