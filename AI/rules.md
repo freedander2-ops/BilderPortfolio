@@ -24,3 +24,16 @@ Performance:
 Code:
 - reusable components
 - no duplicated animation logic
+
+Content language:
+- Russian language UI by default
+
+DO NOT:
+- generate static mockups only
+- generate placeholder image concepts
+- replace implementation with illustrations
+
+The goal is:
+- real working portfolio website
+- real UI implementation
+- cinematic interactive experience
