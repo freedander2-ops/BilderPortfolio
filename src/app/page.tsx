@@ -5,7 +5,6 @@ import Portfolio from "@/components/sections/Portfolio";
 import BeforeAfter from "@/components/sections/BeforeAfter";
 import Process from "@/components/sections/Process";
 import Quality from "@/components/sections/Quality";
-import Trust from "@/components/sections/Trust";
 import FAQ from "@/components/sections/FAQ";
 import Benefits from '@/components/sections/Benefits';
 import Reviews from '@/components/sections/Reviews';
@@ -21,7 +20,6 @@ export default function Home() {
       <BeforeAfter />
       <Process />
       <Quality />
-      <Trust />
       <Benefits />
       <Reviews />
       <FAQ />

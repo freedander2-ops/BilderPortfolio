@@ -2,13 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { motion, useSpring, useMotionValue } from 'motion/react';
-import { useSound } from '@/lib/useSound';
 
 export default function CustomCursor() {
-  const { playTick } = useSound();
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -18,7 +15,6 @@ export default function CustomCursor() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    setIsMounted(true);
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -27,17 +23,15 @@ export default function CustomCursor() {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const isInteractive = 
+      if (
         target.tagName === 'A' || 
         target.tagName === 'BUTTON' || 
         target.closest('a') || 
         target.closest('button') ||
-        target.classList.contains('group');
-
-      if (isInteractive && !isHovered) {
-        playTick();
+        target.classList.contains('group')
+      ) {
         setIsHovered(true);
-      } else if (!isInteractive && isHovered) {
+      } else {
         setIsHovered(false);
       }
     };
@@ -51,7 +45,7 @@ export default function CustomCursor() {
     };
   }, [cursorX, cursorY, isVisible]);
 
-  if (!isMounted) return null;
+  if (typeof window === 'undefined') return null;
 
   return (
     <>
