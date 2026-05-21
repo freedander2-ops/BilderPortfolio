@@ -37,3 +37,8 @@ The goal is:
 - real working portfolio website
 - real UI implementation
 - cinematic interactive experience
+
+Avoid SSR hydration mismatch:
+- client-only motion components must not render unstable DOM during SSR
+- cursor systems must mount only after hydration
+- avoid Math.random() or dynamic motion values during server render
