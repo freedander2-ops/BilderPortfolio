@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { motion, useSpring, useMotionValue } from 'motion/react';
+import { useSound } from '@/lib/useSound';
 
 export default function CustomCursor() {
+  const { playTick } = useSound();
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   
@@ -23,15 +25,17 @@ export default function CustomCursor() {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (
+      const isInteractive = 
         target.tagName === 'A' || 
         target.tagName === 'BUTTON' || 
         target.closest('a') || 
         target.closest('button') ||
-        target.classList.contains('group')
-      ) {
+        target.classList.contains('group');
+
+      if (isInteractive && !isHovered) {
+        playTick();
         setIsHovered(true);
-      } else {
+      } else if (!isInteractive && isHovered) {
         setIsHovered(false);
       }
     };
