@@ -124,6 +124,18 @@ export default function Hero() {
             </span>
           </motion.h1>
 
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: "280px", opacity: 1 }}
+            transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1], delay: 1.2 }}
+            className="h-[1px] bg-orange-500 shadow-[0_0_20px_rgba(249,115,22,0.8)] mt-12 mx-auto relative overflow-hidden"
+          >
+            <motion.div
+              animate={{ x: ["-100%", "100%"] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-40"
+            />
+          </motion.div>
         </div>
 
         <TextReveal
