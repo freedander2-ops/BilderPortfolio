@@ -124,13 +124,6 @@ export default function Hero() {
             </span>
           </motion.h1>
           
-          <motion.div 
-            initial={{ width: 0, opacity: 0 }}
-            whileInView={{ width: "100%", opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 2, ease: [0.19, 1, 0.22, 1], delay: 0.8 }}
-            className="h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent mt-12 mx-auto max-w-3xl"
-          />
         </div>
 
         <TextReveal 
@@ -147,13 +140,13 @@ export default function Hero() {
           <Magnetic>
             <a 
               href="#portfolio"
-              className="group relative px-14 py-7 overflow-hidden rounded-full bg-white text-black font-bold transition-all hover:shadow-[0_0_60px_rgba(255,255,255,0.3)] transform-gpu active:scale-95"
+              className="group relative px-14 py-7 overflow-hidden rounded-full bg-white text-black font-bold transition-all duration-500 hover:shadow-[0_0_60px_rgba(255,255,255,0.2)] transform-gpu active:scale-95 border border-white"
             >
-              <span className="relative z-10 tracking-[0.25em] text-[10px] md:text-xs">СМОТРЕТЬ РАБОТЫ</span>
+              <span className="relative z-10 tracking-[0.25em] text-[10px] md:text-xs group-hover:text-white transition-colors duration-500">СМОТРЕТЬ РАБОТЫ</span>
               <motion.div 
-                className="absolute inset-0 bg-zinc-100"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
+                className="absolute inset-0 bg-orange-500"
+                initial={{ y: "100%" }}
+                whileHover={{ y: 0 }}
                 transition={CINEMATIC_TRANSITION}
               />
             </a>
@@ -162,10 +155,10 @@ export default function Hero() {
           <Magnetic>
             <a 
               href="#contact"
-              className="group relative px-14 py-7 rounded-full border border-white/20 hover:border-white/60 transition-all backdrop-blur-sm transform-gpu active:scale-95"
+              className="group relative px-14 py-7 rounded-full border border-white/20 hover:border-orange-500 transition-all duration-500 backdrop-blur-sm transform-gpu active:scale-95"
             >
-              <span className="relative z-10 tracking-[0.25em] text-[10px] md:text-xs font-bold text-white">ОБСУДИТЬ ПРОЕКТ</span>
-              <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-full" />
+              <span className="relative z-10 tracking-[0.25em] text-[10px] md:text-xs font-bold text-white group-hover:text-orange-500 transition-colors duration-500">ОБСУДИТЬ ПРОЕКТ</span>
+              <div className="absolute inset-0 bg-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-full" />
             </a>
           </Magnetic>
         </motion.div>
